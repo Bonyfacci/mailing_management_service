@@ -1,0 +1,36 @@
+<header data-bs-theme="dark">
+    <div class="collapse text-bg-dark" id="navbarHeader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                    <h4>SkyPro</h4>
+                    <p class="text-body-secondary">Я ваш дом труба шатал.</p>
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                    <h4>Меню</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'app_send_mail:home' %}" class="link-offset-2 link-underline link-underline-opacity-0 text-white">Главная</a></li>
+                        <li><a href="{% url 'app_send_mail:get_start' %}" class="link-offset-2 link-underline link-underline-opacity-0 text-white">Курсовая работа</a></li>
+                        <li><a href="{% url 'app_send_mail:clients' %}" class="link-offset-2 link-underline link-underline-opacity-0 text-white">Клиенты</a></li>
+                        <li><a href="{% url 'app_send_mail:newsletter' %}" class="link-offset-2 link-underline link-underline-opacity-0 text-white">Рассылка</a></li>
+                        <li><a href="{% url 'app_send_mail:message' %}" class="link-offset-2 link-underline link-underline-opacity-0 text-white">Сообщения</a></li>
+                        <li><a href="{% url 'app_send_mail:logs' %}" class="link-offset-2 link-underline link-underline-opacity-0 text-white">Логи</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-dark bg-primary-subtle shadow-sm">
+        <div class="container">
+            <a href="{% url 'admin:index' %}" class="navbar-brand d-flex align-items-center">
+                <i class="bi bi-airplane-engines-fill"></i>
+                <i class="bi bi-emoji-smile mx-3"></i>
+                <strong> Bonyfacci</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,229 @@
+{% extends 'app_send_mail/layouts/layout_base.html' %}
+
+{% block title %}Курсовая работа №6{% endblock %}
+
+
+{% block content %}
+
+<main>
+    <!--    Сергей Платонов-->
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Сергей Платонов</h1>
+                <p class="lead text-body-secondary">Курсовая работа №6.</p>
+                <p>
+                    <!--  <a href="{% url 'app_send_mail:get_start' %}" class="btn btn-success my-2">Get start</a>-->
+
+                    <a href="{% url 'app_send_mail:get_start' %}"
+                       class="link-offset-2 link-underline link-underline-opacity-0 relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold shadow text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
+                        <span class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-indigo-600 group-hover:h-full"></span>
+                        <span class="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
+              <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </span>
+                        <span class="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
+              <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </span>
+                        <span class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">Get start</span>
+                    </a>
+
+                    <!--  <a href="#" class="btn btn-secondary my-2">Нажать два</a>-->
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}
+
+
+{% block element %}
+
+<!-- ======= About Section ======= -->
+<section id="about" class="about">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Обо мне</h2>
+            <p>Какой-то текст.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4" data-aos="fade-right">
+                <img src="static/img/bonyfacci.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+                <h3>Студент &amp; Backend-разработчик.</h3>
+                <p class="fst-italic">
+                    Информация.
+                </p>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <strong>День рождения:</strong>
+                                <span>10 Июля 1990</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Сайт:</strong>
+                                <span>https://github.com/Bonyfacci</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Телефон:</strong>
+                                <span>+7 (921) 785-38-35</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Город:</strong>
+                                <span>Санкт-Петербург, Россия</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Возраст:</strong> <span>33</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Образование:</strong>
+                                <span>Специалист</span>
+                            </li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Электронная почта:</strong> <span><a
+                                    href="#">platonovpochta@gmail.com</a></span>
+                            </li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Работа:</strong>
+                                <span>Открыт к предложениям</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <p>
+                    Краткая информация обо мне)
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section><!-- End About Section -->
+
+<!-- ======= Skills Section ======= -->
+<section id="skills" class="skills section-bg">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Стек технологий</h2>
+            <p>Информация.</p>
+        </div>
+
+        <div class="row skills-content">
+
+            <div class="col-lg-6" data-aos="fade-up">
+
+                <div class="progress">
+                    <span class="skill">HTML <i class="val">30%</i></span>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                </div>
+
+                <div class="progress">
+                    <span class="skill">CSS <i class="val">30%</i></span>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                </div>
+
+                <div class="progress">
+                    <span class="skill">JavaScript <i class="val">5%</i></span>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="5" aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="progress">
+                    <span class="skill">Python <i class="val">80%</i></span>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                </div>
+
+                <div class="progress">
+                    <span class="skill">SQL <i class="val">70%</i></span>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                </div>
+
+                <div class="progress">
+                    <span class="skill">Django <i class="val">25%</i></span>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- End Skills Section -->
+
+<!-- ======= Facts Section ======= -->
+<section id="facts" class="facts">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Факты</h2>
+            <p>Информация.</p>
+        </div>
+
+        <div class="row no-gutters">
+
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
+                <div class="count-box">
+                    <i class="bi bi-emoji-smile"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1"
+                          class="purecounter"></span>
+                    <p><strong>Счастливых клиентов</strong> и результаты</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+                <div class="count-box">
+                    <i class="bi bi-journal-richtext"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1"
+                          class="purecounter"></span>
+                    <p><strong>Проекты</strong> полностью законченные</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
+                <div class="count-box">
+                    <i class="bi bi-tools"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="4320" data-purecounter-duration="1"
+                          class="purecounter"></span>
+                    <p><strong>Часы наработки</strong> программирования</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
+                <div class="count-box">
+                    <i class="bi bi-tencent-qq"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
+                          class="purecounter"></span>
+                    <p><strong>Ночей</strong> не спавших</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- End Facts Section -->
+
+{% endblock %}
+

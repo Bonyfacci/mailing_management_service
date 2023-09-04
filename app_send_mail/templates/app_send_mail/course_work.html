@@ -1,0 +1,115 @@
+{% extends 'app_send_mail/layouts/layout_base.html' %}
+
+{% block title %}Курсовая работа №6{% endblock %}
+
+
+{% block content %}
+
+<div class="container row pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="border-bottom">Сервис управления рассылками, администрирования и получения статистики</h1>
+    <div class="col-3">
+        <h4 class="lh-1">Описание задачи</h4>
+        <p class="text-start lh-1" style="text-indent:25px;">Реализуйте интерфейс заполнения рассылок, то есть
+            <span class="fw-bold">CRUD-механизм</span> для управления рассылками.</p>
+        <p class="text-start lh-1" style="text-indent:25px;">
+            Реализуйте скрипт рассылки, который работает как из командой строки, так и по расписанию.</p>
+        <p class="text-start lh-1" style="text-indent:25px;">
+            Добавьте настройки конфигурации для периодического запуска задачи.</p>
+    </div>
+    <div class="col-4">
+        <h4 class="lh-1">Сущности системы</h4>
+        <h5 class="lh-1">Клиент сервиса:</h5>
+        <p class="text-start mx-4 lh-1">
+            контактный email,<br>
+            ФИО,<br>
+            комментарий.
+        </p>
+        <h5 class="lh-1">
+            Рассылка (настройки):
+        </h5>
+        <p class="text-start mx-3 lh-1">
+            время рассылки;<br>
+            <span class="fw-bold">периодичность:</span> раз в день, раз в неделю, раз в месяц;<br>
+            <span class="fw-bold">статус рассылки:</span> завершена, создана, запущена.
+        </p>
+        <h5 class="lh-1">Сообщение для рассылки:</h5>
+        <p class="text-start mx-4 lh-1">
+            тема письма,<br>
+            тело письма.
+        </p>
+        <h5 class="lh-1">Логи рассылки:</h5>
+        <p class="text-start mx-3 lh-1">
+            дата и время последней попытки;<br>
+            статус попытки;<br>
+            ответ почтового сервера, если он был.
+        </p>
+    </div>
+    <div class="col-5">
+        <h4 class="lh-1">Логика работы системы</h4>
+        <p class="text-start lh-1 text-break" style="text-indent:25px;">После создания новой рассылки, если текущее время больше
+            времени начала и меньше времени окончания, то
+            должны быть выбраны из справочника все клиенты, которые указаны в настройках рассылки, и запущена отправка
+            для всех этих клиентов.</p>
+        <p class="text-start lh-1" style="text-indent:25px;">
+            Если создается рассылка со временем старта в будущем, то отправка должна стартовать автоматически по
+            наступлению этого времени без дополнительных действий со стороны пользователя системы.
+            По ходу отправки сообщений должна собираться статистика (см. описание сущности «сообщение» и «логи» выше) по
+            каждому сообщению для последующего формирования отчетов.</p>
+        <p class="text-start lh-1" style="text-indent:25px;">
+            Внешний сервис, который принимает отправляемые сообщения, может долго обрабатывать запрос, отвечать
+            некорректными данными, на какое-то время вообще не принимать запросы. Нужна корректная обработка подобных
+            ошибок. Проблемы с внешним сервисом не должны влиять на стабильность работы разрабатываемого сервиса
+            рассылок.</p>
+    </div>
+</div>
+
+<div class="bg-body-tertiary text-center">
+    <h3 class="display-5">Поехали!</h3>
+</div>
+
+<!-- Главная -->
+<div class="border w-full h-40 flex items-center justify-center">
+    <a href="{% url 'app_send_mail:home' %}" class="relative inline-block text-lg group">
+            <span class="link-offset-2 link-underline link-underline-opacity-0 relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
+              <span class="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
+              <span class="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
+              <span class="relative">Главная</span>
+            </span>
+        <span class="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0"
+              data-rounded="rounded-lg"></span>
+    </a>
+
+    <!-- Клиенты  -->
+    <a href="{% url 'app_send_mail:clients' %}"
+       class="link-offset-2 link-underline link-underline-opacity-0 relative inline-flex items-center justify-center px-10 py-4 overflow-hidden font-mono font-medium tracking-tighter text-white bg-gray-800 rounded-lg group mx-5">
+        <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-56 group-hover:h-56"></span>
+        <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
+        <span class="relative">Клиенты</span>
+    </a>
+
+    <!-- Рассылка -->
+    <a href="{% url 'app_send_mail:newsletter' %}"
+       class="link-offset-2 link-underline link-underline-opacity-0 relative px-5 py-4 overflow-hidden font-medium text-gray-600 bg-white border border-gray-100 rounded-lg shadow-inner group">
+        <span class="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
+        <span class="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
+        <span class="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+        <span class="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+        <span class="absolute inset-0 w-full h-full duration-300 delay-300 bg-gray-900 opacity-0 group-hover:opacity-100"></span>
+        <span class="relative transition-colors duration-300 delay-200 group-hover:text-white ease">Рассылка</span>
+    </a>
+
+    <!-- Сообщения -->
+    <a href="{% url 'app_send_mail:message' %}"
+       class="link-offset-2 link-underline link-underline-opacity-0 rounded-md px-5 py-4 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium border-indigo-600 text-indigo-600 mx-5">
+        <span class="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-indigo-600 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
+        <span class="relative text-indigo-600 transition duration-300 group-hover:text-white ease">Сообщения</span>
+    </a>
+
+    <!-- Логи -->
+    <a href="{% url 'app_send_mail:logs' %}"
+       class="btn px-5 py-4 p-4 relative border-0 uppercase text-amber-300 shadow bg-transparent hover:delay-[.5s] transition-all duration-500 hover:text-white before:absolute before:left-0 before:bottom-0 before:h-[2px] before:w-0 before:transition-all before:duration-500 before:bg-amber-300 before:hover:w-full after:absolute after:left-0 after:bottom-0 after:h-0 after:w-full after:transition-all after:duration-500 after:bg-amber-300 after:hover:h-full after:text-white after:-z-10 after:hover:delay-[0.4s]">
+        <span class="relative">Логи</span>
+    </a>
+</div>
+
+{% endblock %}

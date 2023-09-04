@@ -1,0 +1,35 @@
+{% extends 'app_send_mail/layouts/layout_base.html' %}
+
+{% block title %}Курсовая работа №6{% endblock %}
+
+
+{% block content %}
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Ваши логи</h1>
+    <p class="lead">Самые честные</p>
+</div>
+
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        <div>
+            <table class="table table-bordered border-dark table-striped table-hover">
+                <thead>
+                <tr>
+                    <th class="text-center" scope="col">id</th>
+                    <th class="text-center" scope="col">Дата и время последней попытки</th>
+                    <th class="text-center" scope="col">Cтатус рассылки</th>
+                    <th class="text-center" scope="col">Ответ почтового сервера</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for object in object_list %}
+                    {% include 'app_send_mail/layouts/message_card.html' %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

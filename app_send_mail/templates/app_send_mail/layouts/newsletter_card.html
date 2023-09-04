@@ -1,0 +1,10 @@
+<tr>
+    <th class="text-center" scope="row">{{ object.pk }}</th>
+    <td class="text-center">{{ object.time }}</td>
+    <td class="text-center">{{ object.periodicity }}</td>
+    {% if object %}
+    <td class="text-center table-success">{{ object.is_active }}</td>
+    {% else %}
+    <td class="text-center table-warning">{{ object.is_active }}</td>
+    {% endif %}
+</tr>

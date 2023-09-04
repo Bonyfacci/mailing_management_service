@@ -1,0 +1,64 @@
+{% extends 'app_send_mail/layouts/layout_base.html' %}
+
+{% block title %}Курсовая работа №6{% endblock %}
+
+
+{% block content %}
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Ваши сообщения</h1>
+    <p class="lead">Самые откровенные</p>
+</div>
+
+<div class="container marketing mt-5 text-center">
+    <hr class="featurette-divider">
+
+    <div class="row">
+
+        <div class="col-md-4 d-flex justify-content-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="currentColor" class="bg-info px-3 bi bi-envelope"
+                 viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+            </svg>
+        </div>
+
+        <div class="col-md-8 px-5">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Создать сообщение</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row d-grid gap-2 d-md-flex justify-content-md-center text-center">
+                        <a href="{% url 'app_send_mail:message_create' %}"
+                           class="btn btn-lg btn-block btn-outline-info fw-bold font-monospace col-6">Создать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        <div>
+            <table class="table table-bordered border-dark table-striped table-hover">
+                <thead>
+                <tr>
+                    <th class="text-center" scope="col">id</th>
+                    <th class="text-center" scope="col">Тема письма</th>
+                    <th class="text-center" scope="col">Комментарий</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for object in object_list %}
+                {% include 'app_send_mail/layouts/message_card.html' %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

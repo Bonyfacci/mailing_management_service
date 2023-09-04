@@ -1,0 +1,15 @@
+<tr>
+    <th class="text-center" scope="row">{{ object.pk }}</th>
+    <td class="text-center">{{ object.name|title }}</td>
+    <td class="text-center">{{ object.last_name|title }}</td>
+    <td class="text-center">{{ object.sur_name|title }}</td>
+    <td class="text-center">{{ object.email }}</td>
+    <td class="text-center">{{ object.comment|title }}</td>
+    <td class="text-center">
+        <div class="btn-group">
+            <a href="{% url 'app_send_mail:client_detail' object.pk %}" class="btn btn-sm btn-outline-info">Посмотреть</a>
+            <a href="{% url 'app_send_mail:client_edit' object.pk %}" class="btn btn-sm btn-outline-warning">Редактировать</a>
+            <a href="{% url 'app_send_mail:client_delete' object.pk %}" class="btn btn-sm btn-outline-danger">Удалить</a>
+        </div>
+    </td>
+</tr>
