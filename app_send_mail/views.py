@@ -90,20 +90,20 @@ class NewsletterListView(LoginRequiredMixin, ListView):
     model = Newsletter
     template_name = 'newsletter_list.html'
 
-    def get_queryset(self):
-        queryset = super().get_queryset().filter(
-            user=self.request.user
-        )
-        if not self.request.user.is_staff:
-            queryset = queryset.filter(user=self.request.user)
-
-        return queryset
+    # def get_queryset(self):
+    #     queryset = super().get_queryset().filter(
+    #         user=self.request.user
+    #     )
+    #     if not self.request.user.is_staff:
+    #         queryset = queryset.filter(user=self.request.user)
+    #
+    #     return queryset
 
 
 class NewsletterCreateView(LoginRequiredMixin, CreateView):
     model = Newsletter
     form_class = NewsletterCreateForm
-    template_name = '#/#_form.html'
+    template_name = 'app_send_mail/newsletter_form.html'
     success_url = reverse_lazy('app_send_mail:newsletter')
 
     def get_form(self, form_class=None):

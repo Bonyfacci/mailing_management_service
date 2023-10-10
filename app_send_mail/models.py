@@ -64,6 +64,7 @@ class Newsletter(models.Model):
 
     client_id = models.ManyToManyField(Client, verbose_name='id Клиента')
     message = models.ForeignKey(Message, on_delete=models.CASCADE, verbose_name='message')
+
     time = models.DateTimeField(default=datetime.now, verbose_name='Время')
     start = models.DateTimeField(default=datetime.now, verbose_name='Начало времени')
     finish = models.DateTimeField(default=datetime.now, verbose_name='Конец времени')

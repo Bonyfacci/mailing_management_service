@@ -1,0 +1,38 @@
+{% extends 'app_send_mail/layouts/layout_base.html' %}
+
+{% block title %}Удаление рассылки{% endblock %}
+
+
+{% block content %}
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Рассылка - {{ object.pk }}</h1>
+    <p class="lead">{{ object.message.title }}</p>
+</div>
+
+<div class="container">
+    <div class="row text-center">
+        <div class="card-body">
+            <form method="post" class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">Удаление рассылки</h4>
+                        </div>
+                        <div class="card-body">
+                            {% csrf_token %}
+                            <p>Действительно хотите удалить рассылку {{ object.pk }}?</p>
+                            <button type="submit" class="btn btn-lg btn-outline-danger col-3">
+                                Удалить
+                            </button>
+                            <a href="{% url 'app_send_mail:clients' %}" class="btn btn-lg btn-block btn-outline-success col-3">Отмена</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
