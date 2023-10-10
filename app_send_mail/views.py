@@ -22,14 +22,14 @@ class ClientsListView(LoginRequiredMixin, ListView):
     model = Client
     template_name = 'app_send_mail/clients_list.html'
 
-    # def get_queryset(self):
-    #     queryset = super().get_queryset().filter(
-    #         user=self.request.user
-    #     )
-    #     if not self.request.user.is_staff:
-    #         queryset = queryset.filter(user=self.request.user)
-    #
-    #     return queryset
+    def get_queryset(self):
+        queryset = super().get_queryset().filter(
+            owner=self.request.user
+        )
+        if not self.request.user.is_staff:
+            queryset = queryset.filter(owner=self.request.user)
+
+        return queryset
 
 
 class ClientsCreateView(LoginRequiredMixin, CreateView):
@@ -40,7 +40,7 @@ class ClientsCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('app_send_mail:clients')
 
     def form_valid(self, form):
-        form.instance.user = self.request.user
+        form.instance.owner = self.request.user
         return super().form_valid(form)
 
 
@@ -71,7 +71,7 @@ class ClientsUpdateView(LoginRequiredMixin, UpdateView):
     # success_url = reverse_lazy('app_send_mail:clients')
 
     def form_valid(self, form):
-        form.instance.user = self.request.user
+        form.instance.owner = self.request.user
         return super().form_valid(form)
 
     def get_success_url(self):
@@ -90,14 +90,14 @@ class NewsletterListView(LoginRequiredMixin, ListView):
     model = Newsletter
     template_name = 'newsletter_list.html'
 
-    # def get_queryset(self):
-    #     queryset = super().get_queryset().filter(
-    #         user=self.request.user
-    #     )
-    #     if not self.request.user.is_staff:
-    #         queryset = queryset.filter(user=self.request.user)
-    #
-    #     return queryset
+    def get_queryset(self):
+        queryset = super().get_queryset().filter(
+            owner=self.request.user
+        )
+        if not self.request.user.is_staff:
+            queryset = queryset.filter(owner=self.request.user)
+
+        return queryset
 
 
 class NewsletterCreateView(LoginRequiredMixin, CreateView):
@@ -106,16 +106,8 @@ class NewsletterCreateView(LoginRequiredMixin, CreateView):
     template_name = 'app_send_mail/newsletter_form.html'
     success_url = reverse_lazy('app_send_mail:newsletter')
 
-    def get_form(self, form_class=None):
-        form = super().get_form(form_class)
-
-        form.fields['message'].queryset = Message.objects.filter(user=self.request.user)
-        form.fields['client_id'].queryset = Client.objects.filter(user=self.request.user)
-
-        return form
-
     def form_valid(self, form):
-        form.instance.user = self.request.user
+        form.instance.owner = self.request.user
         return super().form_valid(form)
 
 
@@ -125,23 +117,14 @@ class NewsletterUpdateView(LoginRequiredMixin, UpdateView):
     success_url = reverse_lazy('app_send_mail:newsletter')
 
     def form_valid(self, form):
-        form.instance.user = self.request.user
+        form.instance.owner = self.request.user
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        selected_clients = self.object.client.values_list('pk', flat=True)
+        selected_clients = self.object.client_id.values_list('pk', flat=True)
         context['selected_clients'] = selected_clients
         return context
-
-    def get_form(self, form_class=None):
-        form = super().get_form(form_class)
-
-        form.fields['message'].queryset = Message.objects.filter(user=self.request.user)
-        form.fields['client_id'].queryset = Client.objects.filter(user=self.request.user)
-
-        form.fields['client_id'].widget = CheckboxSelectMultiple()
-        return form
 
 
 class NewsletterDeleteView(LoginRequiredMixin, DeleteView):
@@ -155,14 +138,14 @@ class MessageListView(LoginRequiredMixin, ListView):
     model = Message
     template_name = 'app_send_mail/message_list.html'
 
-    # def get_queryset(self):
-    #     queryset = super().get_queryset().filter(
-    #         user=self.request.user
-    #     )
-    #     if not self.request.user.is_staff:
-    #         queryset = queryset.filter(user=self.request.user)
-    #
-    #     return queryset
+    def get_queryset(self):
+        queryset = super().get_queryset().filter(
+            owner=self.request.user
+        )
+        if not self.request.user.is_staff:
+            queryset = queryset.filter(owner=self.request.user)
+
+        return queryset
 
 
 class MessageCreateView(LoginRequiredMixin, CreateView):
@@ -173,7 +156,7 @@ class MessageCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('app_send_mail:message')
 
     def form_valid(self, form):
-        form.instance.user = self.request.user
+        form.instance.owner = self.request.user
         return super().form_valid(form)
 
 
@@ -183,7 +166,7 @@ class MessageUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'app_send_mail/message_form.html'
 
     def form_valid(self, form):
-        form.instance.user = self.request.user
+        form.instance.owner = self.request.user
         return super().form_valid(form)
 
     def get_success_url(self):

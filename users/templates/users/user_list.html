@@ -1,11 +1,41 @@
 {% extends 'app_send_mail/layouts/layout_base.html' %}
 
 
-{% block title %}Проверка почты{% endblock %}
+{% block title %}Пользователи{% endblock %}
 
 
 {% block content %}
 
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center bg-body-primary">
+    <h1 class="display-4">Наши пользователи</h1>
+    <p class="lead">Самые надежные</p>
+</div>
 
+
+
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        <div>
+            <table class="table table-bordered border-dark table-striped table-hover">
+                <thead>
+                <tr>
+                    <th class="text-center" scope="col">id</th>
+                    <th class="text-center" scope="col">Почта</th>
+                    <th class="text-center" scope="col">Телефон</th>
+                    <th class="text-center" scope="col">Страна</th>
+                    <th class="text-center" scope="col">Активация</th>
+
+                    <th class="text-center" scope="col">Действие</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for object in object_list %}
+                    {% include 'app_send_mail/layouts/user_card.html' %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

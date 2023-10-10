@@ -29,17 +29,3 @@ class NewsletterCreateForm(StyleFormMixin, forms.ModelForm):
         model = Newsletter
         fields = '__all__'
         exclude = ('owner',)
-        widgets = {
-            'message': forms.Select,
-            'client_id': forms.CheckboxSelectMultiple,
-        }
-
-    def clean_finish(self):
-        finish = self.cleaned_data['finish']
-        start = self.cleaned_data['start']
-        if start > finish:
-            raise forms.ValidationError('Внимание! Конец времени не может быть меньше старта')
-        if start == finish:
-            raise forms.ValidationError('Внимание! Конец времени должен быть отличным от старта времени')
-
-        return finish

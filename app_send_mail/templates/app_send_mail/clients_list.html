@@ -60,11 +60,13 @@
                     <th class="text-center" scope="col">Действие</th>
                 </tr>
                 </thead>
+                {% if object_list %}
                 <tbody>
                 {% for object in object_list %}
-                {% include 'app_send_mail/layouts/client_card.html' %}
+                    {% include 'app_send_mail/layouts/client_card.html' %}
                 {% endfor %}
                 </tbody>
+                {% endif %}
             </table>
         </div>
     </div>

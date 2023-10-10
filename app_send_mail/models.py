@@ -66,8 +66,6 @@ class Newsletter(models.Model):
     message = models.ForeignKey(Message, on_delete=models.CASCADE, verbose_name='message')
 
     time = models.DateTimeField(default=datetime.now, verbose_name='Время')
-    start = models.DateTimeField(default=datetime.now, verbose_name='Начало времени')
-    finish = models.DateTimeField(default=datetime.now, verbose_name='Конец времени')
     periodicity = models.CharField(max_length=150, choices=PERIODICITY, verbose_name='Периодичность')
     status = models.CharField(max_length=100, default='Создана', choices=SELECT_STATUS, verbose_name='Статус')
 

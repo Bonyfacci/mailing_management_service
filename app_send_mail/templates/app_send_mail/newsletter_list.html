@@ -53,15 +53,19 @@
                     <th class="text-center" scope="col">id</th>
                     <th class="text-center" scope="col">Время</th>
                     <th class="text-center" scope="col">Периодичность</th>
-                    <th class="text-center" scope="col">Отправка</th>
-                    <th class="text-center" scope="col">Настройки</th>
+                    <th class="text-center" scope="col">Статус</th>
+                    <th class="text-center" scope="col">Сообщение</th>
+                    <th class="text-center" scope="col">Клиенты</th>
+                    <th class="text-center" scope="col">Действия</th>
                 </tr>
                 </thead>
+                {% if object_list %}
                 <tbody>
                 {% for object in object_list|dictsortreversed:"time" %}
                     {% include 'app_send_mail/layouts/newsletter_card.html' %}
                 {% endfor %}
                 </tbody>
+                {% endif %}
             </table>
         </div>
     </div>

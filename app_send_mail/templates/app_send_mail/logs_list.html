@@ -22,11 +22,13 @@
                     <th class="text-center" scope="col">Ответ почтового сервера</th>
                 </tr>
                 </thead>
+                {% if object_list %}
                 <tbody>
                 {% for object in object_list %}
                     {% include 'app_send_mail/layouts/message_card.html' %}
                 {% endfor %}
                 </tbody>
+                {% endif %}
             </table>
         </div>
     </div>

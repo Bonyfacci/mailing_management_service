@@ -8,15 +8,6 @@
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h1 class="display-4">Создание</h1>
     <p class="lead">это всегда прекрасно</p>
-    <h1 class="h2">
-        {% if request.user.is_staff %}
-        Статус рассылки №{{ object.pk }}
-        {% elif object %}
-        Редактирование рассылки №{{ object.pk }}
-        {% else %}
-        Настройки рассылки
-        {% endif %}
-    </h1>
 </div>
 
 <div class="container">

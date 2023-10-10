@@ -1,7 +1,18 @@
 <tr>
     <th class="text-center" scope="row">{{ object.pk }}</th>
     <td class="text-center">{{ object.time }}</td>
-    <td class="text-center">{{ object.periodicity }}</td>
-    <td class="text-center">{{ object.server_response }}</td>
-    <td class="text-center">{{ object.message|linebreaksbr }}</td>
+    <td class="text-center">{{ object.get_periodicity_display }}</td>
+    <td class="text-center">{{ object.get_status_display }}</td>
+    <td class="text-center">{{ object.message }}</td>
+    <td class="text-center">
+        {% for client in object.client_id.all %}
+        {{ client.email }}<br>
+        {% endfor %}
+    </td>
+    <td class="text-center">
+        <div class="btn-group">
+            <a href="{% url 'app_send_mail:newsletter_edit' object.pk %}" class="btn btn-sm btn-outline-warning">Редактировать</a>
+            <a href="{% url 'app_send_mail:newsletter_delete' object.pk %}" class="btn btn-sm btn-outline-danger">Удалить</a>
+        </div>
+    </td>
 </tr>

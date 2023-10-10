@@ -1,0 +1,13 @@
+<tr>
+    <th class="text-center" scope="row">{{ object.pk }}</th>
+    <td class="text-center">{{ object.email }}</td>
+    <td class="text-center">{{ object.phone }}</td>
+    <td class="text-center">{{ object.country }}</td>
+    <td class="text-center">{{ object.is_verified }}</td>
+    <td class="text-center">
+        <div class="btn-group">
+            <a href="{# url 'users:user_edit' object.pk #}" class="btn btn-sm btn-outline-warning">Редактировать</a>
+            <a href="{# url 'users:user_delete' object.pk #}" class="btn btn-sm btn-outline-danger">Удалить</a>
+        </div>
+    </td>
+</tr>

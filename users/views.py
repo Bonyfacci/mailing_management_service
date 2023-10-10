@@ -1,11 +1,12 @@
 from django.contrib.auth import get_user_model
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.views import LoginView as BaseLoginView
 from django.contrib.auth.views import LogoutView as BaseLogoutView
 from django.utils.crypto import get_random_string
 from django.views import View
-from django.views.generic import CreateView, UpdateView, TemplateView
+from django.views.generic import CreateView, UpdateView, TemplateView, ListView
 
 from users.forms import UserRegisterForm, UserProfileForm
 from users.models import User
@@ -91,18 +92,18 @@ def generate_new_password(request):
     return redirect(reverse('users:login'))
 
 
-# class UserListView(LoginRequiredMixin, UserPassesTestMixin, ListView):
-#     model = User
-#     template_name = 'users/user_list.html'
-#
-#     def test_func(self):
-#         return self.request.user.is_staff
-#
-#     def get_queryset(self):
-#         queryset = User.objects.filter(is_staff=False)
-#         return queryset
-#
-#
+class UserListView(LoginRequiredMixin, UserPassesTestMixin, ListView):
+    model = User
+    template_name = 'users/user_list.html'
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+    def get_queryset(self):
+        queryset = User.objects.filter(is_staff=False)
+        return queryset
+
+
 # class UserUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
 #     model = get_user_model()
 #     template_name = 'users/user_form.html'

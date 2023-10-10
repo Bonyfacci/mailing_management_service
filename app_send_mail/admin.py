@@ -5,7 +5,7 @@ from app_send_mail.models import Client, Newsletter, Message, Logs
 
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'name', 'last_name', 'sur_name', 'email', 'comment')
+    list_display = ('pk', 'name', 'last_name', 'sur_name', 'email', 'comment', 'owner',)
 
 
 @admin.register(Newsletter)
