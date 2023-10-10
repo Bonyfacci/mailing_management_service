@@ -1,5 +1,11 @@
 <tr>
     <th class="text-center" scope="row">{{ object.pk }}</th>
     <td class="text-center">{{ object.title|title }}</td>
-    <td class="text-center">{{ object.content|title }}</td>
+    <td class="text-center">{{ object.content }}</td>
+    <td class="text-center">
+        <div class="btn-group">
+            <a href="{% url 'app_send_mail:message_edit' object.pk %}" class="btn btn-sm btn-outline-warning">Редактировать</a>
+            <a href="{% url 'app_send_mail:message_delete' object.pk %}" class="btn btn-sm btn-outline-danger">Удалить</a>
+        </div>
+    </td>
 </tr>

@@ -1,0 +1,35 @@
+{% extends 'app_send_mail/layouts/layout_base.html' %}
+
+
+{% block title %}Регистрация{% endblock %}
+
+
+{% block content %}
+
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <div class="card mt-5">
+            <div class="card-header">Регистрация</div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="three-text">
+						<label class="anim">
+							<input type="checkbox" class="checkbox" name="confirmation">
+							<span>Даю согласие на обработку персональных данных</span>
+						</label>
+						<div class="clear"> </div>
+					</div>
+                    <button type="submit" class="btn btn-success">Регистрация</button>
+                </form>
+            </div>
+            <div class="card-footer">
+                <p>Мы рады принять Вас в нашу команду!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

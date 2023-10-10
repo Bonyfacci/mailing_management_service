@@ -7,36 +7,36 @@
 
 <main>
     <!--    Сергей Платонов-->
-    <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">Сергей Платонов</h1>
-                <p class="lead text-body-secondary">Курсовая работа №6.</p>
-                <p>
-                    <!--  <a href="{% url 'app_send_mail:get_start' %}" class="btn btn-success my-2">Get start</a>-->
+    <section class="section-bg">
+        <div class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">Сергей Платонов</h1>
+                    <p class="lead text-body-secondary">Курсовая работа №6.</p>
+                    <p>
+                        <a href="{% url 'app_send_mail:get_start' %}"
+                           class="link-offset-2 link-underline link-underline-opacity-0 relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold shadow text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
+                            <span class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-indigo-600 group-hover:h-full"></span>
+                            <span class="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
+                  <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </span>
+                            <span class="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
+                  <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </span>
+                            <span class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">Get start</span>
+                        </a>
 
-                    <a href="{% url 'app_send_mail:get_start' %}"
-                       class="link-offset-2 link-underline link-underline-opacity-0 relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold shadow text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
-                        <span class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-indigo-600 group-hover:h-full"></span>
-                        <span class="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
-              <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                   xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </span>
-                        <span class="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
-              <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                   xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </span>
-                        <span class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">Get start</span>
-                    </a>
-
-                    <!--  <a href="#" class="btn btn-secondary my-2">Нажать два</a>-->
-                </p>
+                        <!--  <a href="#" class="btn btn-secondary my-2">Нажать два</a>-->
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -47,23 +47,26 @@
 
 {% block element %}
 
-<!-- ======= About Section ======= -->
+<!-- ======= Обо мне ======= -->
 <section id="about" class="about">
     <div class="container">
 
         <div class="section-title">
             <h2>Обо мне</h2>
-            <p>Какой-то текст.</p>
+            <p>Человек — это субъект общественно-исторического процесса, развития материальной и духовной культуры
+                    на Земле, биосоциальное существо, генетически связанное с другими формами жизни, но выделившееся из
+                    них благодаря способности производить орудия труда, обладающее членораздельной речью и сознанием,
+                    нравственными качествами.</p>
         </div>
 
         <div class="row">
             <div class="col-lg-4" data-aos="fade-right">
-                <img src="static/img/bonyfacci.jpg" class="img-fluid" alt="">
+                <img src="static/my_img/bonyfacci.jpg" class="img-fluid" alt="">
             </div>
             <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
                 <h3>Студент &amp; Backend-разработчик.</h3>
                 <p class="fst-italic">
-                    Информация.
+                    Информация:
                 </p>
                 <div class="row">
                     <div class="col-lg-6">
@@ -71,7 +74,7 @@
                             <li><i class="bi bi-chevron-right"></i> <strong>День рождения:</strong>
                                 <span>10 Июля 1990</span></li>
                             <li><i class="bi bi-chevron-right"></i> <strong>Сайт:</strong>
-                                <span>https://github.com/Bonyfacci</span></li>
+                                <span><a href="#">https://github.com/Bonyfacci</a></span></li>
                             <li><i class="bi bi-chevron-right"></i> <strong>Телефон:</strong>
                                 <span>+7 (921) 785-38-35</span></li>
                             <li><i class="bi bi-chevron-right"></i> <strong>Город:</strong>
@@ -93,21 +96,22 @@
                     </div>
                 </div>
                 <p>
-                    Краткая информация обо мне)
+                    Общественное существо, обладающее разумом и сознанием.
                 </p>
             </div>
         </div>
 
     </div>
-</section><!-- End About Section -->
+</section><!-- Обо мне -->
 
-<!-- ======= Skills Section ======= -->
+<!-- ======= Стек Технологий ======= -->
 <section id="skills" class="skills section-bg">
     <div class="container">
 
         <div class="section-title">
             <h2>Стек технологий</h2>
-            <p>Информация.</p>
+            <p>Набор программных инструментов и технологий, которые используются для создания и
+                поддержки продуктов и сервисов.</p>
         </div>
 
         <div class="row skills-content">
@@ -171,15 +175,15 @@
         </div>
 
     </div>
-</section><!-- End Skills Section -->
+</section><!-- Стек Технологий -->
 
-<!-- ======= Facts Section ======= -->
+<!-- ======= Факты ======= -->
 <section id="facts" class="facts">
     <div class="container">
 
         <div class="section-title">
             <h2>Факты</h2>
-            <p>Информация.</p>
+            <p>Небольшая, но захватывающая информация, которая может поразить своей необычностью или новизной.</p>
         </div>
 
         <div class="row no-gutters">
@@ -223,7 +227,82 @@
         </div>
 
     </div>
-</section><!-- End Facts Section -->
+</section><!-- Факты -->
+
+
+<!-- ======= Отзывы ======= -->
+<section class="section-bg">
+
+    <div class="container marketing">
+        <div class="section-title">
+            <h2>Отзывы</h2>
+            <p>Передача мыслей и чувств, письменное либо устное высказывание,
+                основанное на выражении личностного эмоционально-оценочного отношения к увиденному,
+                услышанному или пережитому опыту.</p>
+        </div>
+
+        <div class="row no-gutters">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="d-flex justify-content-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+                                     class="bg-info-subtle rounded-circle text-success bi bi-rocket"
+                                     viewBox="0 0 16 16">
+                                    <path d="M8 8c.828 0 1.5-.895 1.5-2S8.828 4 8 4s-1.5.895-1.5 2S7.172 8 8 8Z"/>
+                                    <path d="M11.953 8.81c-.195-3.388-.968-5.507-1.777-6.819C9.707 1.233 9.23.751 8.857.454a3.495 3.495 0 0 0-.463-.315A2.19 2.19 0 0 0 8.25.064.546.546 0 0 0 8 0a.549.549 0 0 0-.266.073 2.312 2.312 0 0 0-.142.08 3.67 3.67 0 0 0-.459.33c-.37.308-.844.803-1.31 1.57-.805 1.322-1.577 3.433-1.774 6.756l-1.497 1.826-.004.005A2.5 2.5 0 0 0 2 12.202V15.5a.5.5 0 0 0 .9.3l1.125-1.5c.166-.222.42-.4.752-.57.214-.108.414-.192.625-.281l.198-.084c.7.428 1.55.635 2.4.635.85 0 1.7-.207 2.4-.635.067.03.132.056.196.083.213.09.413.174.627.282.332.17.586.348.752.57l1.125 1.5a.5.5 0 0 0 .9-.3v-3.298a2.5 2.5 0 0 0-.548-1.562l-1.499-1.83ZM12 10.445v.055c0 .866-.284 1.585-.75 2.14.146.064.292.13.425.199.39.197.8.46 1.1.86L13 14v-1.798a1.5 1.5 0 0 0-.327-.935L12 10.445ZM4.75 12.64C4.284 12.085 4 11.366 4 10.5v-.054l-.673.82a1.5 1.5 0 0 0-.327.936V14l.225-.3c.3-.4.71-.664 1.1-.861.133-.068.279-.135.425-.199ZM8.009 1.073c.063.04.14.094.226.163.284.226.683.621 1.09 1.28C10.137 3.836 11 6.237 11 10.5c0 .858-.374 1.48-.943 1.893C9.517 12.786 8.781 13 8 13c-.781 0-1.517-.214-2.057-.607C5.373 11.979 5 11.358 5 10.5c0-4.182.86-6.586 1.677-7.928.409-.67.81-1.082 1.096-1.32.09-.076.17-.135.236-.18Z"/>
+                                    <path d="M9.479 14.361c-.48.093-.98.139-1.479.139-.5 0-.999-.046-1.479-.139L7.6 15.8a.5.5 0 0 0 .8 0l1.079-1.439Z"/>
+                                </svg>
+                            </div>
+                            <h2 class="fw-normal text-center">Валерий Бабкин</h2>
+                        </div>
+                        <p>Класный парень, обяснил всё подробно.</p>
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-12">
+                        <div class="d-flex justify-content-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+                                 class="bg-warning-subtle rounded-circle bi bi-person-heart text-danger"
+                                 viewBox="0 0 16 16">
+                                <path d="M9 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h10s1 0 1-1-1-4-6-4-6 3-6 4Zm13.5-8.09c1.387-1.425 4.855 1.07 0 4.277-4.854-3.207-1.387-5.702 0-4.276Z"/>
+                            </svg>
+                        </div>
+                        <h2 class="fw-normal text-center">Василий Карабцов</h2>
+                        <p>Он очень хорошо отработал. Все понятно объяснил. Так сказать по полочкам разложил.</p>
+                        <p>Очень опытный тьютер. Спасибо ему огромное.</p>
+                    </div><!-- /.col-lg-4 -->
+                </div>
+                <div class="col-lg-4">
+                    <div class="d-flex justify-content-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+                             class="bg-danger-subtle rounded-circle bi bi-fire text-warning" viewBox="0 0 16 16">
+                            <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16Zm0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15Z"/>
+                        </svg>
+                    </div>
+                    <h2 class="fw-normal text-center">Анастасия Иващенко</h2>
+                    <p>Помог разобраться в связях между моделью, контроллерами, урлами и шаблонами.</p>
+                    <p>Я забыла пароль админа, поэтому Сергей помог удалить старого админа и создать нового.</p>
+                    <p>Помог исправить product_list.html, чтобы корректно отображались фотографии товара.</p>
+                    <p>Сергей очень хорошо и глубоко понимает и знает код и может спокойно объяснить что к чему.</p>
+                    <p>Приветлив. Очень приятное впечатление от встречи.</p>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="d-flex justify-content-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+                             class="bg-success-subtle rounded-circle bi bi-hand-thumbs-up-fill text-info"
+                             viewBox="0 0 17 17">
+                            <path d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"/>
+                        </svg>
+                    </div>
+                    <h2 class="fw-normal text-center">Виктор Колгатин</h2>
+                    <p>Сергей очень помог, разобрали основные моменты, помог найти и исправить ошибки в ДЗ,
+                        структурировать его.</p>
+                    <p>Подробно ответил на все мои вопросы, дал советы.</p>
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+        </div>
+    </div>
+</section><!-- Отзывы -->
 
 {% endblock %}
 
