@@ -12,7 +12,9 @@
     <td class="text-center">
         <div class="btn-group">
             <a href="{% url 'app_send_mail:newsletter_edit' object.pk %}" class="btn btn-sm btn-outline-warning">Редактировать</a>
+            {% if not user.is_staff %}
             <a href="{% url 'app_send_mail:newsletter_delete' object.pk %}" class="btn btn-sm btn-outline-danger">Удалить</a>
+            {% endif %}
         </div>
     </td>
 </tr>

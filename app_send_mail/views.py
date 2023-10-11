@@ -98,11 +98,12 @@ class NewsletterListView(LoginRequiredMixin, ListView):
     template_name = 'newsletter_list.html'
 
     def get_queryset(self):
-        queryset = super().get_queryset().filter(
-            owner=self.request.user
-        )
+        queryset = Newsletter.objects.all()
+
         if not self.request.user.is_staff:
-            queryset = queryset.filter(owner=self.request.user)
+            queryset = queryset.filter(
+                owner=self.request.user
+            )
 
         return queryset
 
