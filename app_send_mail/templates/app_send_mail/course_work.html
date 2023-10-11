@@ -117,7 +117,7 @@
 
     <!-- Рассылка -->
     <a href="{% url 'app_send_mail:newsletter' %}"
-       class="link-offset-2 link-underline link-underline-opacity-0 relative px-5 py-4 overflow-hidden font-medium text-gray-600 bg-white border border-gray-100 rounded-lg shadow-inner group">
+       class="link-offset-2 link-underline link-underline-opacity-0 relative px-5 py-4 overflow-hidden font-medium text-gray-600 bg-white border border-gray-100 rounded-lg shadow-inner group mx-5">
         <span class="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
         <span class="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
         <span class="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
@@ -126,8 +126,9 @@
         <span class="relative transition-colors duration-300 delay-200 group-hover:text-white ease">Рассылка</span>
     </a>
 
+    <!-- Пользователи -->
     <a href="{% url 'users:user_list' %}"
-       class="link-offset-2 link-underline link-underline-opacity-0 relative inline-flex items-center justify-center px-10 py-4 overflow-hidden font-mono font-medium tracking-tighter text-white bg-gray-800 rounded-lg group mx-5">
+       class="link-offset-2 link-underline link-underline-opacity-0 relative inline-flex items-center justify-center px-10 py-4 overflow-hidden font-mono font-medium tracking-tighter text-white bg-gray-800 rounded-lg group">
         <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-56 group-hover:h-56"></span>
         <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
         <span class="relative">Пользователи</span>

@@ -72,7 +72,6 @@ class Newsletter(models.Model):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, **NULLABLE, verbose_name='Владелец')
 
     def __str__(self):
-        # return f"{self.message.title} {self.start.strftime('%Y-%m-%d %H:%M')} {self.periodicity}"
         return f"{self.message} {self.start} {self.periodicity}"
 
     class Meta:
@@ -94,7 +93,6 @@ class Logs(models.Model):
     server_response = models.TextField(**NULLABLE, verbose_name='Ответ сервера')
 
     def __str__(self):
-        # return f'{self.message.title} {self.send_time.strftime("%Y-%m-%d %H:%M")}'
         return f'{self.message} {self.send_time}'
 
     class Meta:

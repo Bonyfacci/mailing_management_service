@@ -1,5 +1,4 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.forms import CheckboxSelectMultiple
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
@@ -34,7 +33,6 @@ class ClientsListView(LoginRequiredMixin, ListView):
 
 class ClientsCreateView(LoginRequiredMixin, CreateView):
     model = Client
-    # fields = ('name', 'last_name', 'sur_name', 'email', 'comment')
     form_class = ClientsCreateForm
     template_name = 'app_send_mail/client_form.html'
     success_url = reverse_lazy('app_send_mail:clients')
@@ -65,10 +63,8 @@ class ClientsDetailView(LoginRequiredMixin, DetailView):
 
 class ClientsUpdateView(LoginRequiredMixin, UpdateView):
     model = Client
-    # fields = ('name', 'last_name', 'sur_name', 'email', 'comment')
     form_class = ClientsCreateForm
     template_name = 'app_send_mail/client_form.html'
-    # success_url = reverse_lazy('app_send_mail:clients')
 
     def form_valid(self, form):
         form.instance.owner = self.request.user
@@ -106,6 +102,14 @@ class NewsletterCreateView(LoginRequiredMixin, CreateView):
     template_name = 'app_send_mail/newsletter_form.html'
     success_url = reverse_lazy('app_send_mail:newsletter')
 
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+
+        form.fields['message'].queryset = Message.objects.filter(owner=self.request.user)
+        form.fields['client_id'].queryset = Client.objects.filter(owner=self.request.user)
+
+        return form
+
     def form_valid(self, form):
         form.instance.owner = self.request.user
         return super().form_valid(form)
@@ -116,14 +120,20 @@ class NewsletterUpdateView(LoginRequiredMixin, UpdateView):
     form_class = NewsletterCreateForm
     success_url = reverse_lazy('app_send_mail:newsletter')
 
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+
+        form.fields['message'].queryset = Message.objects.filter(owner=self.request.user)
+        form.fields['client_id'].queryset = Client.objects.filter(owner=self.request.user)
+
+        return form
+
     def form_valid(self, form):
         form.instance.owner = self.request.user
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        selected_clients = self.object.client_id.values_list('pk', flat=True)
-        context['selected_clients'] = selected_clients
         return context
 
 
@@ -150,7 +160,6 @@ class MessageListView(LoginRequiredMixin, ListView):
 
 class MessageCreateView(LoginRequiredMixin, CreateView):
     model = Message
-    # fields = ('title', 'content')
     form_class = MessageCreateForm
     template_name = 'app_send_mail/message_form.html'
     success_url = reverse_lazy('app_send_mail:message')
