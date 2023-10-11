@@ -19,6 +19,9 @@ def get_start(request):
     random_blog = random.sample(list(blog_list), 3)
     context = {
         'blog_list': random_blog,
+        'settings_list': Newsletter.objects.all(),
+        'active_settings': Newsletter.objects.filter(status='Запущена'),
+        'client_list': Client.objects.all(),
     }
     return render(request, 'app_send_mail/course_work.html', context)
 
