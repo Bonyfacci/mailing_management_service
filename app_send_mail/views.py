@@ -1,8 +1,11 @@
+import random
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 
+from app_blog.models import Blog
 from app_send_mail.forms import ClientsCreateForm, MessageCreateForm, NewsletterCreateForm
 from app_send_mail.models import Client, Newsletter, Message, Logs
 
@@ -12,7 +15,12 @@ def home(request):
 
 
 def get_start(request):
-    return render(request, 'app_send_mail/course_work.html')
+    blog_list = Blog.objects.all()
+    random_blog = random.sample(list(blog_list), 3)
+    context = {
+        'blog_list': random_blog,
+    }
+    return render(request, 'app_send_mail/course_work.html', context)
 
 
 # ---------------------------------------------------------------- Клиенты --------------------------------
