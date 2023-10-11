@@ -1,14 +1,10 @@
-from django.urls import reverse_lazy, reverse
-from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 
 from app_blog.models import Blog
 
 
 class BlogListView(ListView):
     model = Blog
-    extra_context = {
-        'title': f'Блог Castellsefels'
-    }
 
 
 class BlogDetailView(DetailView):
@@ -39,5 +35,3 @@ class BlogDetailView(DetailView):
 #     model = Blog
 #     template_name = 'app_blog/blog_delete_confirm.html'
 #     success_url = reverse_lazy('app_blog:blog_list')
-
-

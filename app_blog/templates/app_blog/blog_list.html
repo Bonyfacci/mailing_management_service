@@ -31,11 +31,14 @@
     {% for article in blog_list %}
     <div class="col-4">
         <div class="card mb-4 box-shadow" style="background: #20c997; border-color: white; color: white;">
+            <div class="card-header" style="height:50px">
+                <p class="card-text" style="height: 20px; font-size: 20px;">
+                    <strong>
+                        {{ article.title }}
+                    </strong>
+                </p>
+            </div>
             <div class="card-body">
-
-                <p class="card-text" style="height: 20px; font-size: 20px;"><strong>
-                    {{ article.title }}
-                </strong></p>
                 <img class="img-thumbnail" src="{{ object.photo|mymedia }}" alt="blog_image"
                      style="object-fit: contain; height: 500px;">
             </div>
@@ -43,7 +46,9 @@
                 <p class="card-text">
                     <I>Просмотры: {{ article.views_count }}</I>
                 </p>
-                <a href="{% url 'app_blog:blog_article' article.pk %}" class="btn btn-md btn-outline-primary">Читать</a>
+                <a href="{% url 'app_blog:blog_article' article.pk %}" class="btn btn-md btn-outline-primary">
+                    Читать пост
+                </a>
             </div>
         </div>
     </div>
