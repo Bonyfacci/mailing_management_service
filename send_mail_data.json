@@ -1,0 +1,576 @@
+[
+  {
+    "model": "app_send_mail.client",
+    "pk": 1,
+    "fields": {
+      "name": "Иван",
+      "last_name": "Иванов",
+      "sur_name": null,
+      "email": "ivan@ivan.ru",
+      "comment": "",
+      "owner": null
+    }
+  },
+  {
+    "model": "app_send_mail.client",
+    "pk": 2,
+    "fields": {
+      "name": "Вася",
+      "last_name": "dwada",
+      "sur_name": null,
+      "email": "vasia@wad.com",
+      "comment": "",
+      "owner": null
+    }
+  },
+  {
+    "model": "app_send_mail.client",
+    "pk": 3,
+    "fields": {
+      "name": "dwad",
+      "last_name": "adwawd",
+      "sur_name": null,
+      "email": "qodjq@dwhao.com",
+      "comment": "",
+      "owner": null
+    }
+  },
+  {
+    "model": "app_send_mail.client",
+    "pk": 4,
+    "fields": {
+      "name": "1231",
+      "last_name": "12312",
+      "sur_name": null,
+      "email": "fdawd@wda.com",
+      "comment": "",
+      "owner": null
+    }
+  },
+  {
+    "model": "app_send_mail.client",
+    "pk": 5,
+    "fields": {
+      "name": "1e21e",
+      "last_name": "eq2eq",
+      "sur_name": "qe2",
+      "email": "dwadwa@dawd.com",
+      "comment": "",
+      "owner": 2
+    }
+  },
+  {
+    "model": "app_send_mail.client",
+    "pk": 6,
+    "fields": {
+      "name": "Иван",
+      "last_name": "Иванов",
+      "sur_name": null,
+      "email": "ivan@ivan.ru",
+      "comment": "",
+      "owner": null
+    }
+  },
+  {
+    "model": "app_send_mail.client",
+    "pk": 7,
+    "fields": {
+      "name": "Петр",
+      "last_name": "Петров",
+      "sur_name": null,
+      "email": "petr@sky.ru",
+      "comment": "",
+      "owner": null
+    }
+  },
+  {
+    "model": "app_send_mail.message",
+    "pk": 1,
+    "fields": {
+      "title": "Добрый день!",
+      "content": "Хорошего всем настроения!",
+      "created_time": "2023-10-09T20:42:11.332Z",
+      "owner": null
+    }
+  },
+  {
+    "model": "app_send_mail.message",
+    "pk": 2,
+    "fields": {
+      "title": "Привет!",
+      "content": "Добро пожаловать!",
+      "created_time": "2023-10-11T10:51:01.321Z",
+      "owner": null
+    }
+  },
+  {
+    "model": "app_send_mail.message",
+    "pk": 3,
+    "fields": {
+      "title": "Пока!",
+      "content": "Береги себя!",
+      "created_time": "2023-10-11T11:12:51.971Z",
+      "owner": null
+    }
+  },
+  {
+    "model": "app_send_mail.message",
+    "pk": 4,
+    "fields": {
+      "title": "Рассылка раз в день!",
+      "content": "День",
+      "created_time": "2023-10-12T14:36:37.703Z",
+      "owner": null
+    }
+  },
+  {
+    "model": "app_send_mail.message",
+    "pk": 5,
+    "fields": {
+      "title": "Рассылка раз в месяц!",
+      "content": "Месяц",
+      "created_time": "2023-10-12T14:36:54.487Z",
+      "owner": null
+    }
+  },
+  {
+    "model": "app_send_mail.message",
+    "pk": 6,
+    "fields": {
+      "title": "Рассылка раз в неделю!",
+      "content": "Неделя",
+      "created_time": "2023-10-12T14:37:41.192Z",
+      "owner": null
+    }
+  },
+  {
+    "model": "app_send_mail.message",
+    "pk": 7,
+    "fields": {
+      "title": "Разовая рассылка",
+      "content": "Один раз",
+      "created_time": "2023-10-12T14:40:00.092Z",
+      "owner": null
+    }
+  },
+  {
+    "model": "app_send_mail.newsletter",
+    "pk": 1,
+    "fields": {
+      "message": 1,
+      "time": "2023-10-10T18:35:38Z",
+      "periodicity": "Один раз",
+      "status": "Завершена",
+      "owner": null,
+      "client_id": [
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "model": "app_send_mail.newsletter",
+    "pk": 2,
+    "fields": {
+      "message": 1,
+      "time": "2023-10-10T18:35:38Z",
+      "periodicity": "Раз в неделю",
+      "status": "Создана",
+      "owner": null,
+      "client_id": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "app_send_mail.newsletter",
+    "pk": 3,
+    "fields": {
+      "message": 2,
+      "time": "2023-10-11T11:10:29Z",
+      "periodicity": "Один раз",
+      "status": "Завершена",
+      "owner": null,
+      "client_id": [
+        6
+      ]
+    }
+  },
+  {
+    "model": "app_send_mail.newsletter",
+    "pk": 4,
+    "fields": {
+      "message": 3,
+      "time": "2023-10-11T11:13:02Z",
+      "periodicity": "Раз в неделю",
+      "status": "Завершена",
+      "owner": null,
+      "client_id": [
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app_send_mail.newsletter",
+    "pk": 5,
+    "fields": {
+      "message": 2,
+      "time": "2023-10-11T11:40:29Z",
+      "periodicity": "Раз в месяц",
+      "status": "Завершена",
+      "owner": null,
+      "client_id": [
+        7
+      ]
+    }
+  },
+  {
+    "model": "app_send_mail.newsletter",
+    "pk": 6,
+    "fields": {
+      "message": 2,
+      "time": "2023-10-12T11:47:03Z",
+      "periodicity": "Один раз",
+      "status": "Завершена",
+      "owner": null,
+      "client_id": [
+        6
+      ]
+    }
+  },
+  {
+    "model": "app_send_mail.newsletter",
+    "pk": 7,
+    "fields": {
+      "message": 2,
+      "time": "2023-10-12T11:47:58Z",
+      "periodicity": "Раз в день",
+      "status": "Завершена",
+      "owner": null,
+      "client_id": [
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app_send_mail.newsletter",
+    "pk": 8,
+    "fields": {
+      "message": 3,
+      "time": "2023-10-12T13:34:03Z",
+      "periodicity": "Один раз",
+      "status": "Завершена",
+      "owner": null,
+      "client_id": [
+        6
+      ]
+    }
+  },
+  {
+    "model": "app_send_mail.newsletter",
+    "pk": 9,
+    "fields": {
+      "message": 2,
+      "time": "2023-10-12T13:50:13Z",
+      "periodicity": "Раз в день",
+      "status": "Завершена",
+      "owner": null,
+      "client_id": [
+        6
+      ]
+    }
+  },
+  {
+    "model": "app_send_mail.newsletter",
+    "pk": 10,
+    "fields": {
+      "message": 7,
+      "time": "2023-10-12T14:50:11Z",
+      "periodicity": "Один раз",
+      "status": "Запущена",
+      "owner": null,
+      "client_id": [
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app_send_mail.newsletter",
+    "pk": 11,
+    "fields": {
+      "message": 4,
+      "time": "2023-10-12T14:56:30Z",
+      "periodicity": "Раз в день",
+      "status": "Запущена",
+      "owner": null,
+      "client_id": [
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app_send_mail.newsletter",
+    "pk": 12,
+    "fields": {
+      "message": 6,
+      "time": "2023-10-12T14:50:00Z",
+      "periodicity": "Раз в неделю",
+      "status": "Запущена",
+      "owner": null,
+      "client_id": [
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app_send_mail.newsletter",
+    "pk": 13,
+    "fields": {
+      "message": 5,
+      "time": "2023-10-12T14:55:00Z",
+      "periodicity": "Раз в месяц",
+      "status": "Запущена",
+      "owner": null,
+      "client_id": [
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 1,
+    "fields": {
+      "message": null,
+      "client": 6,
+      "send_time": "2023-10-11T19:15:21.389Z",
+      "attempt_status": "success",
+      "server_response": null
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 2,
+    "fields": {
+      "message": null,
+      "client": 6,
+      "send_time": "2023-10-11T19:15:21.902Z",
+      "attempt_status": "success",
+      "server_response": null
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 3,
+    "fields": {
+      "message": null,
+      "client": 7,
+      "send_time": "2023-10-11T19:15:22.632Z",
+      "attempt_status": "success",
+      "server_response": null
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 4,
+    "fields": {
+      "message": null,
+      "client": 7,
+      "send_time": "2023-10-11T19:15:23.344Z",
+      "attempt_status": "success",
+      "server_response": null
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 5,
+    "fields": {
+      "message": null,
+      "client": null,
+      "send_time": "2023-10-12T13:25:21.598Z",
+      "attempt_status": "OK",
+      "server_response": "Успешно"
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 6,
+    "fields": {
+      "message": null,
+      "client": null,
+      "send_time": "2023-10-12T13:25:23.017Z",
+      "attempt_status": "OK",
+      "server_response": "Успешно"
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 7,
+    "fields": {
+      "message": null,
+      "client": null,
+      "send_time": "2023-10-12T13:37:41.478Z",
+      "attempt_status": "OK",
+      "server_response": "Успешно"
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 8,
+    "fields": {
+      "message": null,
+      "client": null,
+      "send_time": "2023-10-12T13:46:51.533Z",
+      "attempt_status": "OK",
+      "server_response": "Успешно"
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 9,
+    "fields": {
+      "message": null,
+      "client": null,
+      "send_time": "2023-10-12T14:41:51.616Z",
+      "attempt_status": "OK",
+      "server_response": "Успешно"
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 10,
+    "fields": {
+      "message": null,
+      "client": null,
+      "send_time": "2023-10-12T14:41:53.285Z",
+      "attempt_status": "OK",
+      "server_response": "Успешно"
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 11,
+    "fields": {
+      "message": null,
+      "client": null,
+      "send_time": "2023-10-12T14:41:54.866Z",
+      "attempt_status": "OK",
+      "server_response": "Успешно"
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 12,
+    "fields": {
+      "message": null,
+      "client": null,
+      "send_time": "2023-10-12T14:41:56.290Z",
+      "attempt_status": "OK",
+      "server_response": "Успешно"
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 13,
+    "fields": {
+      "message": 4,
+      "client": null,
+      "send_time": "2023-10-12T14:54:02.583Z",
+      "attempt_status": "OK",
+      "server_response": "Успешно"
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 14,
+    "fields": {
+      "message": 6,
+      "client": null,
+      "send_time": "2023-10-12T14:54:03.820Z",
+      "attempt_status": "OK",
+      "server_response": "Успешно"
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 15,
+    "fields": {
+      "message": 7,
+      "client": null,
+      "send_time": "2023-10-12T14:54:05.279Z",
+      "attempt_status": "OK",
+      "server_response": "Успешно"
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 16,
+    "fields": {
+      "message": 8,
+      "client": null,
+      "send_time": "2023-10-12T14:54:06.553Z",
+      "attempt_status": "OK",
+      "server_response": "Успешно"
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 17,
+    "fields": {
+      "message": 9,
+      "client": null,
+      "send_time": "2023-10-12T14:54:07.889Z",
+      "attempt_status": "OK",
+      "server_response": "Успешно"
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 18,
+    "fields": {
+      "message": 10,
+      "client": null,
+      "send_time": "2023-10-12T14:54:09.285Z",
+      "attempt_status": "OK",
+      "server_response": "Успешно"
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 19,
+    "fields": {
+      "message": 11,
+      "client": null,
+      "send_time": "2023-10-12T14:54:10.736Z",
+      "attempt_status": "OK",
+      "server_response": "Успешно"
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 20,
+    "fields": {
+      "message": 13,
+      "client": null,
+      "send_time": "2023-10-12T14:54:12.288Z",
+      "attempt_status": "OK",
+      "server_response": "Успешно"
+    }
+  },
+  {
+    "model": "app_send_mail.logs",
+    "pk": 21,
+    "fields": {
+      "message": 12,
+      "client": null,
+      "send_time": "2023-10-12T14:54:13.733Z",
+      "attempt_status": "OK",
+      "server_response": "Успешно"
+    }
+  }
+]

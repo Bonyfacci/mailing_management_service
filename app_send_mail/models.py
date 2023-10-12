@@ -9,6 +9,7 @@ class Client(models.Model):
     name = models.CharField(max_length=25, verbose_name='Имя')
     last_name = models.CharField(max_length=50, verbose_name='Фамилия')
     sur_name = models.CharField(max_length=50, verbose_name='Отчество', **NULLABLE)
+
     email = models.EmailField(max_length=100, verbose_name='Почта')
     comment = models.TextField(**NULLABLE, verbose_name='Комментарий')
 
@@ -72,7 +73,7 @@ class Newsletter(models.Model):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, **NULLABLE, verbose_name='Владелец')
 
     def __str__(self):
-        return f"{self.message} {self.start} {self.periodicity}"
+        return f"{self.message} {self.status} {self.periodicity}"
 
     class Meta:
         verbose_name = 'Рассылка'
@@ -80,16 +81,19 @@ class Newsletter(models.Model):
 
 
 class Logs(models.Model):
-
+    STATUS_OK = 'OK'
+    STATUS_ERROR = 'ERROR'
     STATUS = (
-        ('success', 'Успешно'),
-        ('error', 'Ошибка'),
+        (STATUS_OK, 'Успешно'),
+        (STATUS_ERROR, 'Ошибка'),
     )
 
     message = models.ForeignKey(Newsletter, on_delete=models.CASCADE, **NULLABLE, verbose_name='Сообщение')
+
     client = models.ForeignKey(Client, on_delete=models.CASCADE, **NULLABLE, verbose_name='Клиент')
-    send_time = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время отправки')
-    attempt_status = models.CharField(max_length=20, choices=STATUS, verbose_name='Статус отправки')
+
+    send_time = models.DateTimeField(auto_now_add=True, **NULLABLE, verbose_name='Дата и время отправки')
+    attempt_status = models.CharField(max_length=20, choices=STATUS, default=STATUS_OK, verbose_name='Статус отправки')
     server_response = models.TextField(**NULLABLE, verbose_name='Ответ сервера')
 
     def __str__(self):
@@ -98,3 +102,4 @@ class Logs(models.Model):
     class Meta:
         verbose_name = 'Лог'
         verbose_name_plural = 'Логи'
+        ordering = ('-send_time',)

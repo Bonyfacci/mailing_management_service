@@ -55,9 +55,15 @@
  - Установить Redis
  - В терминале выполнить команды:
 <br> python manage.py migrate
-<br> python manage.py fill_blog
 <br> python manage.py create_super_user
 <br> python manage.py create_manager
+
+***
+
+<h3>Наполнение базы данных:</h3>
+
+ - python3 manage.py loaddata blog_data.json
+ - python3 manage.py loaddata send_mail_data.json
 
 ***
 
@@ -67,8 +73,7 @@
 <br> sudo service redis-server start
  - Запустить сервер
 <br> python manage.py runserver
- - Запустить apscheduler (в другом окне терминала)
-<br> python manage.py runapscheduler
+ - Apscheduler запускается автоматически
 
 ***
 
@@ -76,9 +81,7 @@
 
  - Остановить Redis (терминала под Ubuntu)
 <br> sudo service redis-server stop
- - Остановить сервер (в окне терминала)
-<br> Ctrl+C
- - Остановить apscheduler (в другом окне терминала)
+ - Остановить сервер и apscheduler (в окне терминала)
 <br> Ctrl+C
 
 ***

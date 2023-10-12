@@ -18,6 +18,8 @@
                 <tr>
                     <th class="text-center" scope="col">id</th>
                     <th class="text-center" scope="col">Дата и время последней попытки</th>
+                    <th class="text-center" scope="col">Имя клиент</th>
+                    <th class="text-center" scope="col">Клиент</th>
                     <th class="text-center" scope="col">Cтатус рассылки</th>
                     <th class="text-center" scope="col">Ответ почтового сервера</th>
                 </tr>
@@ -25,7 +27,7 @@
                 {% if object_list %}
                 <tbody>
                 {% for object in object_list %}
-                    {% include 'app_send_mail/layouts/message_card.html' %}
+                    {% include 'app_send_mail/layouts/log_card.html' %}
                 {% endfor %}
                 </tbody>
                 {% endif %}

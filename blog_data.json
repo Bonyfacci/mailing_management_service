@@ -1,0 +1,57 @@
+[
+  {
+    "model": "app_blog.blog",
+    "pk": 1,
+    "fields": {
+      "title": "Wangala- MUJER SAHRAUÍ, VISIONES DE RESISTENCIA",
+      "content": "Hoy miércoles 11 a las 19h., Inauguración con pase documental de la exposición \"Wangala- MUJER SAHRAUÍ, VISIONES DE RESISTENCIA\" en la sala Margarida Xirgu de la Biblioteca RFJ (C/ Bisbe Urquinaona 19-21) con motivo de las Jornades de Pau y Solidaritat a Castelldefels.\r\n\r\nHasta el 21 de octubre (en horario de biblioteca), exposición fotográfica de Ruido Photo, la Federación ACAPS y Novact, en el marco del proyecto SOS Sáhara, basada en el testimonio de 8 mujeres saharauis de los campamentos, los territorios ocupados y la diáspora, en la que se explica en primera persona cuál es el su papel en la lucha no violenta del pueblo saharaui y cómo influye el hecho de ser mujeres.",
+      "photo": "blog/1.jpg",
+      "created_date": "2023-10-11T15:40:57Z",
+      "views_count": 10
+    }
+  },
+  {
+    "model": "app_blog.blog",
+    "pk": 2,
+    "fields": {
+      "title": "Martes 10 de octubre",
+      "content": "BOOOON DIA, CASTELLDEFELS !!!\r\n\r\nMartes 10 de octubre. Sol y agradables temperaturas, con mínimas de 17 y máximas de 26º. Misma predicción para mañana miércoles.\r\n\r\nViu Castelldefels\r\nCastelldefels Viu.",
+      "photo": "blog/2.jpg",
+      "created_date": null,
+      "views_count": 17
+    }
+  },
+  {
+    "model": "app_blog.blog",
+    "pk": 3,
+    "fields": {
+      "title": "Avinguda de la Pineda",
+      "content": "SOM Castelldefels dice NO (a medias) a los dos carriles de circulación en la Avinguda de la Pineda.\r\n\r\nSOM Castelldefels no darán su apoyo a sus socios de Gobierno (PP) en una de las promesas electorales del alcalde de la ciudad Manu Reyes, paralizando así el proyecto de la vuelta a los dos carriles de circulación en la Pineda.\r\n\r\nEl partido liderado por Nico Cerpa apoya la “configuración actual de la\r\nPineda desde Molinot hasta el puente de la autovía” y “favorecer la circulación compartida de vehículos y bicicletas entre Constitució y Molinot, integrando el carril bici”.\r\n\r\nQue me perdonen si me equivoco, pero a mi entender esto significa que la Av. Pineda volvería a ser de doble sentido beneficiando un grupo reducido de personas, al permitirles llegar directamente desde el centro de la ciudad a sus hogares sin tener que dar el rodeo hasta el puente dels Mossos o el de los institutos. Actualmente, ya existe un carril de circulación hasta Molinot que evita que se vean obligados a entrar en el pueblo, tramo en el que las bicicletas deben compartir calzada con el tráfico rodado.\r\n\r\nEsto obligaría a realizar unas obras (con el consiguiente gasto), que incluirían la modificación del cruce entre Constitució y Pineda para permitir giros hacia el mar, la calzada bajo el puente hasta Molinot, señales de tráfico, semáforos, repintado de la vía y mobiliario urbano, para que ese tramo volviera a ser de doble sentido.\r\n\r\nSOM Castelldefels coincide en llevar a cabo las obras de reparación del pozo (que se está hundiendo) y el cambio de niveles del pavimento del cruce de Molinot con Pineda, para acabar con los graves problemas de inundaciones en los párquines de las comunidades colindantes. Además de en “generar nuevos carriles para bicicletas en Molinot y Av. Ciutat de Málaga\".\r\n\r\n¿Y el Carrer Barcelona?\r\n\r\nEn mi humilde opinión (si, opino), si la Av. Pineda no va a volver a ser de doble sentido, que se quede tal como está, que resuelvan los problemas de las inundaciones y por favor, dejemos de marear la perdiz y a los/as vecinos/as de Castelldefels.",
+      "photo": "blog/3.jpg",
+      "created_date": "2023-10-11T15:41:47Z",
+      "views_count": 3
+    }
+  },
+  {
+    "model": "app_blog.blog",
+    "pk": 4,
+    "fields": {
+      "title": "Lunes 9 de octubre",
+      "content": "BOOOON DIA, CASTELLDEFELS !!!\r\n\r\nLunes 9 de octubre. Sol y agradables temperaturas, con mínimas de 18 y máximas de 26º. Misma predicción para mañana martes.\r\n\r\nViu Castelldefels\r\nCastelldefels Viu.",
+      "photo": "blog/4.jpg",
+      "created_date": null,
+      "views_count": 13
+    }
+  },
+  {
+    "model": "app_blog.blog",
+    "pk": 5,
+    "fields": {
+      "title": "El Bandolero Serrallonga",
+      "content": "A las 11h., Hora del cuento especial Jornadas Europeas del Patrimonio Cultural \"El Bandolero Serrallonga\" a cargo de Vivim del cuentu, en el espacio exterior Espai Jove La Masía (junto biblioteca).\r\n\r\nRecomendado para niños/as + 4 años.\r\n\r\nViu Castelldefels.\r\nCastelldefels viu la cultura.",
+      "photo": "blog/5.jpg",
+      "created_date": null,
+      "views_count": 40
+    }
+  }
+]

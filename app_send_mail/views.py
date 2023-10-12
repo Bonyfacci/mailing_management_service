@@ -16,6 +16,7 @@ def home(request):
 
 def get_start(request):
     blog_list = Blog.objects.all()
+
     random_blog = random.sample(list(blog_list), 3)
     context = {
         'blog_list': random_blog,
@@ -191,7 +192,7 @@ class MessageUpdateView(LoginRequiredMixin, UpdateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('mailing:message')
+        return reverse('app_send_mail:message')
 
 
 class MessageDeleteView(LoginRequiredMixin, DeleteView):
