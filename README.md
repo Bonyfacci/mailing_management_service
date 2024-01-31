@@ -1,9 +1,5 @@
 <h1 align="center">Holaaa! <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="50"></h1>
 
-<h2 align="center">Я, Платонов Сергей</h2>
-<h2 align="center">студент онлайн школы SkyPro ⚡</h2>
-<h3 align="center">Представляю Вашему вниманию мою Курсовую работу №6</h3>
-
 ***
 
 <h2>Сервис управления рассылками, администрирования и получения статистики</h2>
